@@ -1,0 +1,9 @@
+[database]
+user = "root"
+password = "hu1song2tao3"
+host = "10.0.48.43"
+port = 9011
+dbname = "swlgv4"
+
+[jwt]
+token_secret = "dXLvwczD3m1w893sB2wcrWosAFixXGiyUGuF9DQI3+s="
