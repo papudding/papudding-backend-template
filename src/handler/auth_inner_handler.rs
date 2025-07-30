@@ -3,7 +3,7 @@ use crate::{
     model::{response::ResponseResult, state::AppState},
     service::auth_service::load_all_role_rel_resource,
 };
-use actix_web::{get, web, HttpResponse, Responder, Result};
+use actix_web::{HttpResponse, Responder, Result, get, web};
 use dashmap::DashMap;
 use std::{collections::HashMap, sync::Arc};
 

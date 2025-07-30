@@ -1,5 +1,8 @@
 use crate::{
-    config::auth_middleware::Auth, handler::auth_inner_handler::{reflush_all_role_rel_resource, get_current_loaded_role_rel_resource},
+    config::auth_middleware::Auth,
+    handler::auth_inner_handler::{
+        get_current_loaded_role_rel_resource, reflush_all_role_rel_resource,
+    },
 };
 use actix_web::web::{self, ServiceConfig};
 

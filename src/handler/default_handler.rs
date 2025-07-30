@@ -1,5 +1,5 @@
 use actix_web::{HttpResponse, Responder};
-use serde_json::json ;
+use serde_json::json;
 // 自定义404处理函数
 pub async fn not_found() -> impl Responder {
     HttpResponse::NotFound().json(json!({

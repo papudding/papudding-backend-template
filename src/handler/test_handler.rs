@@ -2,7 +2,7 @@ use crate::{
     model::{constance::REQUEST_HEAD_TOKEN, response::ResponseResult, state::AppState},
     util::token_util::validate_jwt_token,
 };
-use actix_web::{get, post, web, HttpRequest, HttpResponse, Responder, Result};
+use actix_web::{HttpRequest, HttpResponse, Responder, Result, get, post, web};
 
 #[get("/hello")]
 async fn hello() -> impl Responder {

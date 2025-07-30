@@ -3,12 +3,13 @@ use crate::{
     service::auth_service::verify_token_and_authority,
 };
 use actix_web::{
-    dev::{forward_ready, Service, ServiceRequest, ServiceResponse, Transform},
-    error, web, Error,
+    Error,
+    dev::{Service, ServiceRequest, ServiceResponse, Transform, forward_ready},
+    error, web,
 };
 use futures_util::future::LocalBoxFuture;
 use log::{debug, error};
-use std::future::{ready, Ready};
+use std::future::{Ready, ready};
 
 pub struct AuthMiddleware<S> {
     service: S,

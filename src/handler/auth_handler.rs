@@ -2,7 +2,7 @@ use crate::dto::auth_dto::{LoginDto, RegisterDto};
 use crate::model::user::User;
 use crate::model::{response::ResponseResult, state::AppState};
 use crate::service::auth_service;
-use actix_web::{post, web, HttpResponse, Responder, Result};
+use actix_web::{HttpResponse, Responder, Result, post, web};
 use log::{error, info};
 
 /// 异步处理用户登录请求

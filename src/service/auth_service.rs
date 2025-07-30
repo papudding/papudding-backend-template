@@ -183,8 +183,7 @@ pub fn verify_token_and_authority(
             // 日志记录验证结果和角色资源映射信息
             debug!(
                 "auth_service==>verify_token_and_authority=>claims:{:?}, role_rel_resource_map:{:?}",
-                claims,
-                role_rel_resource_map
+                claims, role_rel_resource_map
             );
             // 获取令牌的过期时间
             let expiration_time = claims.exp;

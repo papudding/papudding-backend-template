@@ -1,4 +1,4 @@
-use rbatis::{self, impl_select, rbdc::DateTime, sql, RBatis};
+use rbatis::{self, RBatis, impl_select, rbdc::DateTime, sql};
 use serde::{Deserialize, Serialize};
 
 use crate::dto::auth_dto::RoleRelPathDto;

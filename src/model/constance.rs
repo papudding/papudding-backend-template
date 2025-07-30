@@ -4,3 +4,7 @@ pub const DEFAULT_JWT_EXPIRATION_TIME_HOUR: i64 = 6;
 pub const DEFAULT_BCRYPT_COST: u32 = 12;
 
 pub const REQUEST_HEAD_TOKEN: &'static str = "token";
+
+pub const DELETED: u8 = 1;
+
+pub const NOT_DELETED: u8 = 0;

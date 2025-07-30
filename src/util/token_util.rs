@@ -1,6 +1,6 @@
 use crate::util::config_util::CFG;
 use jsonwebtoken::Algorithm;
-use jsonwebtoken::{decode, encode, DecodingKey, EncodingKey, Header, Validation};
+use jsonwebtoken::{DecodingKey, EncodingKey, Header, Validation, decode, encode};
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Serialize, Deserialize)]
@@ -42,4 +42,10 @@ pub fn validate_jwt_token(token: &str) -> Result<TokenClaims, jsonwebtoken::erro
 
     let result = decode::<TokenClaims>(token, &decoding_key, &validation)?;
     Ok(result.claims)
+}
+
+// 从token中获取用户ID
+pub fn get_user_id_by_token(token: &str) -> Result<u64, jsonwebtoken::errors::Error> {
+    let claims = validate_jwt_token(token)?;
+    Ok(claims.user_id)
 }

@@ -1,6 +1,6 @@
-use base64::{engine::general_purpose, Engine as _};
-use rand::thread_rng;
+use base64::{Engine as _, engine::general_purpose};
 use rand::Rng;
+use rand::thread_rng;
 
 // 生成一个随机的base64
 #[allow(dead_code)]

@@ -6,15 +6,15 @@ mod router;
 mod service;
 mod util;
 
-use actix_web::{middleware::Logger, web, App, HttpServer};
+use actix_web::{App, HttpServer, middleware::Logger, web};
+use config::logger::init_logger;
+use handler::default_handler::not_found;
 use log::{debug, warn};
 use model::{config::Setting, state::AppState};
 use router::{auth_inner_router, auth_router, test_router};
 use service::auth_service::load_all_role_rel_resource;
-use handler::default_handler::not_found;
 use std::sync::Arc;
 use util::{config_util::CFG, db_util};
-use config::logger::init_logger;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -68,8 +68,8 @@ async fn main() -> std::io::Result<()> {
             .configure(auth_router::routes)
             .configure(test_router::routes)
             .configure(auth_inner_router::routes)
-            // 设置默认服务处理未匹配的路由 
-            .default_service ( web :: route ( ) . to ( not_found ) )
+            // 设置默认服务处理未匹配的路由
+            .default_service(web::route().to(not_found))
     })
     .bind((setting.host.as_str(), setting.port))?
     .run()
